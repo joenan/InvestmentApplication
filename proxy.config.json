@@ -1,0 +1,11 @@
+{
+  "/": {
+    "target": "http://www.siwes.org",
+    "pathRewrite": {
+      "^/": ""
+    },
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "info"
+  }
+}

@@ -1,0 +1,53 @@
+<div class="card">
+    <div class="panel-heading text-center">
+        <h4><i class="fa fa-cog" aria-hidden="true"></i>Loan Type Settings</h4>
+    </div>
+    <hr />
+    <div class="card-body">
+        <div class="clearfix">
+            <form [formGroup]="loanTypeForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="input-group">
+                                    <input type="text" formControlName="description" class="form-control" id="loanStatus" placeholder="Loan Type">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <button type="submit" class="btn btn-primary">Add </button>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Status Description</th>
+                                                <th scope="col"></th>
+                                                <th scope="col"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let list of loanTypeList; let i = index">
+                                                <th scope="row">{{i+1}}</th>
+                                                <td>{{list.description}}</td>
+                                                <td><i class="fa fa-edit" (click)="editLoanType(list)" style="color:blue"></i></td>
+                                                <td><i class="fa fa-trash" (click)="deleteLoanType(list.loanTypeId)" style="color:red"></i></td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

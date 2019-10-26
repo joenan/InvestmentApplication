@@ -1,0 +1,51 @@
+<div class="left side-menu">
+    <div class="sidebar-inner slimscrollleft" [ngClass]="{ 'show': navbarOpen }">
+
+        <!--- Sidemenu -->
+        <div id="sidebar-menu">
+            <ul>
+                <li class="menu-title">Navigation</li>
+
+                <li class="has_sub" (click)="gotoDashboard()">
+                    <a class="waves-effect"><i class="mdi mdi-view-dashboard"></i><span
+                            class="badge badge-success float-right"></span> <span> Dashboard </span> </a>
+                </li>
+
+                <li class="has_sub" (click)="gotoApplyLoan()">
+                    <a class="waves-effect"><i class="mdi mdi-invert-colors"></i><span
+                            class="badge badge-success float-right"></span> <span>Apply</span> </a>
+                </li>
+
+               
+
+
+                <li class="has_sub" (click)="gotoInvest()">
+                        <a class="waves-effect"><i class="mdi mdi-invert-colors"></i><span
+                                class="badge badge-success float-right"></span> <span>Invest</span> </a>
+    
+                    </li>
+
+                <li class="has_sub" (click)="gotoSettings()">
+                    <a class="waves-effect"><i class="mdi mdi-invert-colors"></i><span
+                            class="badge badge-success float-right"></span> <span>Settings</span> </a>
+
+                </li>
+
+
+
+
+            </ul>
+        </div>
+        <!-- Sidebar -->
+        <div class="clearfix"></div>
+
+        <div class="help-box" style="bottom:0; position:absolute; color: #ffffff;">
+            <h5 class="text-muted m-t-0">For Help ?</h5>
+            <p class=""><span class="text-custom">Email:</span> <br /> support@support.com</p>
+            <p class="m-b-0"><span class="text-custom">Call:</span> <br /> (+234) 811 3841 699</p>
+        </div>
+
+    </div>
+    <!-- Sidebar -left -->
+
+</div>

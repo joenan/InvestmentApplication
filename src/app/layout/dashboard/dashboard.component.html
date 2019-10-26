@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-xl-6 col-md-4">
+        <div class="card-box widget-box-three">
+            <div class="bg-icon float-left ">
+                <i class="ti-bookmark-alt"></i>
+            </div>
+            <div class="text-right" (click)="gotoPendingReview()">
+                <p class="text-success m-t-5 text-uppercase font-600 font-secondary">Active Loans</p>
+                <h2 class="m-b-10"><span data-plugin="counterup">{{pendingReview?.length}}</span></h2>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-xl-6 col-md-4">
+        <div class="card-box widget-box-three">
+            <div class="bg-icon float-left">
+                <i class="ti-agenda"></i>
+            </div>
+            <div class="text-right" (click)="gotoPendingApproval()">
+                <p class="text-success m-t-5 text-uppercase font-600 font-secondary">Liquidated Loans
+                </p>
+                <h2 class="m-b-10"><span data-plugin="counterup">{{pendingApproval?.length}}</span></h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-6 col-md-4">
+        <div class="card-box widget-box-three">
+            <div class="bg-icon float-left">
+                <i class="ti-agenda"></i>
+            </div>
+            <div class="text-right" (click)="gotoPendingApproval()">
+                <p class="text-success m-t-5 text-uppercase font-600 font-secondary">Completed Loans
+                </p>
+                <h2 class="m-b-10"><span data-plugin="counterup"></span></h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-6 col-md-4">
+        <div class="card-box widget-box-three">
+            <div class="bg-icon float-left">
+                <i class="ti-agenda"></i>
+            </div>
+            <div class="text-right" (click)="gotoPendingApproval()">
+                <p class="text-success m-t-5 text-uppercase font-600 font-secondary">Pending Loans
+                </p>
+                <h2 class="m-b-10"><span data-plugin="counterup"></span></h2>
+            </div>
+        </div>
+    </div>
+
+</div>
