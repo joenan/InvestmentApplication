@@ -8,9 +8,9 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./loan-status.component.css']
 })
 export class LoanStatusComponent implements OnInit {
-  loanStatusList: any;
+  // loanStatusList: any;
   loanStatusForm: FormGroup;
-  loanList: any = [];
+  loanList: any=[];
 
   constructor(private formBuilder: FormBuilder, private service: ApiService, private toastr: ToastrService) { }
 
@@ -18,8 +18,7 @@ export class LoanStatusComponent implements OnInit {
     this.getAllLoanStatus();
 
     this.loanStatusForm = this.formBuilder.group({
-      loanStatusId: [''],
-      description: ['', [Validators.required]],
+          status: ['', [Validators.required]],
     });
   }
   onSubmit() {
@@ -46,7 +45,7 @@ export class LoanStatusComponent implements OnInit {
   editLoanStatus(data: any) {
     this.loanStatusForm.patchValue(data);
   }
-  deleteLoanType(id: any) {
+  deleteLoanStatus(id: any) {
     this.service.deleteLoanStatus(id).subscribe(res => {
       this.getAllLoanStatus();
     }, error => {

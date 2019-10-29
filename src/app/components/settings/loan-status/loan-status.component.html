@@ -11,7 +11,7 @@
             <div class="row">
               <div class="col">
                 <div class="input-group">
-                  <input type="text" formControlName="description"  class="form-control" id="loanStatus" placeholder="Loan Status">
+                  <input type="text" formControlName="status"  class="form-control" id="status" placeholder="Loan Status">
                 </div>
               </div>
               <div class="col">
@@ -32,9 +32,9 @@
                     <tbody>
                       <tr *ngFor="let list of loanList; let i = index">
                         <th scope="row">{{i+1}}</th>
-                        <td>{{list.description}}</td>
+                        <td>{{list.status}}</td>
                         <td><i class="fa fa-edit" (click)="editLoanStatus(list)" style="color:blue"></i></td>
-                        <td><i class="fa fa-trash" (click)="deleteLoanStatus(list.loanStatusId)" style="color:red"></i></td>
+                        <td><i class="fa fa-trash" (click)="deleteLoanStatus(list.statusId)" style="color:red"></i></td>
                       </tr>
 
 
