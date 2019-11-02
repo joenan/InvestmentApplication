@@ -5,17 +5,17 @@
   <hr />
   <div class="card-body">
     <div class="clearfix">
-      <form>
+      <form [formGroup]="loanStatusForm" (ngSubmit)="onSubmit()">
         <div class="row">
           <div class="col">
             <div class="row">
               <div class="col">
                 <div class="input-group">
-                  <input type="text" class="form-control" id="loanStatus" placeholder="Loan Status">
+                  <input type="text" formControlName="status"  class="form-control" id="status" placeholder="Loan Status">
                 </div>
               </div>
               <div class="col">
-                <button class="btn btn-primary">Add</button>
+                <button type="submit" class="btn btn-primary">Add</button>
               </div>
 
               <div class="col-md-6">
@@ -30,11 +30,11 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td><i class="fa fa-edit"></i></td>
-                        <td><i class="fa fa-trash"></i></td>
+                      <tr *ngFor="let list of loanList; let i = index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{list.status}}</td>
+                        <td><i class="fa fa-edit" (click)="editLoanStatus(list)" style="color:blue"></i></td>
+                        <td><i class="fa fa-trash" (click)="deleteLoanStatus(list.statusId)" style="color:red"></i></td>
                       </tr>
 
 

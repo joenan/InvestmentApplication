@@ -14,7 +14,7 @@ export class ApiService {
   // baseGetUrl: string = '/RemitaStatus.aspx';
   // basePostUrl: string = '/RemitaPostStatus.aspx';
 
-  baseUrl: string = '/loanapi/api/v1/loan'
+  baseUrl: string = '/InvestmentApplicationApi/api/v1/loan'
 
 
   constructor(private http: HttpClient) { }
@@ -53,6 +53,17 @@ export class ApiService {
   }
   deleteLoanTypes(id: any) {
     return this.http.delete(this.baseUrl + '/loanType/'+id);
+  }
+
+  saveLoanStatus(value: any): any {
+    return this.http.post(this.baseUrl + '/loanStatus', value);
+  }
+  
+  getAllLoanStatus() {
+    return this.http.get(this.baseUrl + '/loanStatus');
+  }
+  deleteLoanStatus(id: any) {
+    return this.http.delete(this.baseUrl + '/loanStatus/'+id);
   }
 
 }

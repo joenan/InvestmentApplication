@@ -14,8 +14,9 @@ export class InterestComponent implements OnInit {
   loanInterestRate: any;
   investmentInterestRate: any;
 
-  loanInterestRateList: any = [];
-  investmentInterestRateList: any = [];
+  
+  investmentInterestRateValue: any = [];
+  loanInterestRateValue: any = [];
 
   constructor(private service: ApiService, private toastr: ToastrService) { }
 
@@ -26,7 +27,8 @@ export class InterestComponent implements OnInit {
   getInvestmentInterestRate() {
     this.service.getInvestmentInterestRate().subscribe(res => {
       
-      this.investmentInterestRateList = res;
+    this.investmentInterestRateValue = res;
+    console.log(res)
     },
       error => {
         console.log(error.error.message)
@@ -35,7 +37,8 @@ export class InterestComponent implements OnInit {
   getLoanInterestRate() {
     this.service.getLoanInterestRate().subscribe(res => {
      
-      this.loanInterestRateList = res;
+      this.loanInterestRateValue = res;
+      console.log(res)
     },
       error => {
         console.log(error.error.message)
@@ -45,7 +48,7 @@ export class InterestComponent implements OnInit {
   setLoanInterestRate() {
 
     let loanObjectToSave = {
-      loanInterestRate: this.loanInterestRate
+      interestRate: this.loanInterestRate
     }
 
     this.service.saveLoanInterestRate(loanObjectToSave).subscribe(res => {
@@ -61,11 +64,12 @@ export class InterestComponent implements OnInit {
 
   setInvestmentInterestRate() {
     let investmentObjectToSave = {
-      investmentInterestRate: this.investmentInterestRate
+      interestRate: this.investmentInterestRate
     }
 
     this.service.saveInvestmentInterestRate(investmentObjectToSave).subscribe(res => {
      
+      this.investmentInterestRateValue = res;
       this.getInvestmentInterestRate();
       this.toastr.success(res.message, 'Success');
       
