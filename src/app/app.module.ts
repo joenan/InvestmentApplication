@@ -27,7 +27,8 @@ import { InterestComponent } from './components/settings/interest/interest.compo
 import { InvestComponent } from './components/invest/invest.component';
 import { SettingsLandingComponent } from './components/settings/settings-landing/settings-landing.component';
 import { TransactionsComponent } from './components/transactions/transactions.component';
-
+import { UsersettingsComponent } from './components/usersettings/usersettings.component';
+import { AddNewuserComponent } from './components/usersettings/add-newuser/add-newuser.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,9 @@ import { TransactionsComponent } from './components/transactions/transactions.co
     InterestComponent,
     InvestComponent,
     SettingsLandingComponent,
-    TransactionsComponent
+    TransactionsComponent,
+    UsersettingsComponent,
+    AddNewuserComponent
   ],
   imports: [
     BrowserModule,

@@ -29,6 +29,10 @@ export class SidebarComponent implements OnInit {
     this.router.navigate(['home/settings']);
   }
 
+  gotoUserSettings() {
+    this.router.navigate(['home/usersettings']);
+  }
+
   gotoInvest() {
     this.router.navigate(['home/investment']);
   }

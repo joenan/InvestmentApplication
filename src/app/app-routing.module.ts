@@ -10,6 +10,8 @@ import { LoanTypeComponent } from './components/settings/loan-type/loan-type.com
 import { SettingsLandingComponent } from './components/settings/settings-landing/settings-landing.component';
 import { InvestComponent } from './components/invest/invest.component';
 import { TransactionsComponent } from './components/transactions/transactions.component';
+import { UsersettingsComponent } from './components/usersettings/usersettings.component';
+import { AddNewuserComponent } from './components/usersettings/add-newuser/add-newuser.component';
 
 
 const routes: Routes = [
@@ -24,7 +26,9 @@ const routes: Routes = [
       { path: 'loantype', component: LoanTypeComponent },
       { path: 'settings', component: SettingsLandingComponent },
       { path: 'investment', component: InvestComponent },
-      { path: 'transactions', component: TransactionsComponent }
+      { path: 'transactions', component: TransactionsComponent },
+      { path: 'usersettings', component: UsersettingsComponent },
+      { path: 'add-newuser', component: AddNewuserComponent }
     
     ]
   },
