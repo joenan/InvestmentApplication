@@ -33,8 +33,9 @@ export class SidebarComponent implements OnInit {
     this.router.navigate(['home/investment']);
   }
 
-
-   
+  gotoTransactions() {
+    this.router.navigate(['home/transactions']);
+  }
 
 
 

@@ -26,7 +26,8 @@ import { LoanTypeComponent } from './components/settings/loan-type/loan-type.com
 import { InterestComponent } from './components/settings/interest/interest.component';
 import { InvestComponent } from './components/invest/invest.component';
 import { SettingsLandingComponent } from './components/settings/settings-landing/settings-landing.component';
- 
+import { TransactionsComponent } from './components/transactions/transactions.component';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { SettingsLandingComponent } from './components/settings/settings-landing
     LoanTypeComponent,
     InterestComponent,
     InvestComponent,
-    SettingsLandingComponent
+    SettingsLandingComponent,
+    TransactionsComponent
   ],
   imports: [
     BrowserModule,

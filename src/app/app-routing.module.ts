@@ -9,6 +9,7 @@ import { LoanStatusComponent } from './components/settings/loan-status/loan-stat
 import { LoanTypeComponent } from './components/settings/loan-type/loan-type.component';
 import { SettingsLandingComponent } from './components/settings/settings-landing/settings-landing.component';
 import { InvestComponent } from './components/invest/invest.component';
+import { TransactionsComponent } from './components/transactions/transactions.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
       { path: 'loantype', component: LoanTypeComponent },
       { path: 'settings', component: SettingsLandingComponent },
       { path: 'investment', component: InvestComponent },
+      { path: 'transactions', component: TransactionsComponent }
     
     ]
   },
