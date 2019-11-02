@@ -1,0 +1,110 @@
+<div class="card">
+    <div class="card-header">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand">Transaction Statistics</a>
+            <form class="form-inline">
+                <input type="text" name="search" placeholder="Search..">
+            </form>
+        </nav>
+    </div>
+    <div class="card-body">
+        <div class="clearfix">
+
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <!-- Checkbox Column -->
+                <ng-container matColumnDef="select">
+                    <th mat-header-cell *matHeaderCellDef>
+                        <mat-checkbox (change)="$event ? masterToggle() : null"
+                            [checked]="selection.hasValue() && isAllSelected()"
+                            [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
+                        </mat-checkbox>
+                    </th>
+                    <td mat-cell *matCellDef="let row">
+                        <mat-checkbox (click)="$event.stopPropagation()"
+                            (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)"
+                            [aria-label]="checkboxLabel(row)">
+                        </mat-checkbox>
+                    </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="creditAccountNo">
+                    <th mat-header-cell *matHeaderCellDef> Credit AcctNo </th>
+                    <td mat-cell *matCellDef="let element"> {{element.creditAccountNo}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="creditAccountName">
+                    <th mat-header-cell *matHeaderCellDef> Credit Acct Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.creditAccountName}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="ToBank">
+                    <th mat-header-cell *matHeaderCellDef> To Bank </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ToBank}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="TransDate">
+                    <th mat-header-cell *matHeaderCellDef> Trans Date </th>
+                    <td mat-cell *matCellDef="let element"> {{element.TransDate | date}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="DebitAcctNo">
+                    <th mat-header-cell *matHeaderCellDef> Debit AcctNo </th>
+                    <td mat-cell *matCellDef="let element"> {{element.debitAccountNo}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="DebitAccountName">
+                    <th mat-header-cell *matHeaderCellDef> Debit Account Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.DebitAccountName}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="FromBank">
+                    <th mat-header-cell *matHeaderCellDef> From Bank </th>
+                    <td mat-cell *matCellDef="let element"> {{element.fromBank}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Amount">
+                    <th mat-header-cell *matHeaderCellDef> Amount </th>
+                    <td mat-cell *matCellDef="let element"> &#8358;{{element.Amount | number}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="TransRefNo">
+                    <th mat-header-cell *matHeaderCellDef> Trans RefNo </th>
+                    <td mat-cell *matCellDef="let element"> {{element.TransRefNo}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="details">
+                    <th mat-header-cell *matHeaderCellDef> Details </th>
+                    <td mat-cell *matCellDef="let element">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="searchDetails(element)"
+                            style="-webkit-text-fill-color:blue">search</mat-icon>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="reject">
+                    <th mat-header-cell *matHeaderCellDef> Reject </th>
+                    <td mat-cell *matCellDef="let element">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="rejectReview(element)"
+                            style="-webkit-text-fill-color:red">block</mat-icon>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="proceed">
+                    <th mat-header-cell *matHeaderCellDef> Approve </th>
+                    <td mat-cell *matCellDef="let element">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon"
+                            (click)="verifySingleReview(element)" style="-webkit-text-fill-color:green">check</mat-icon>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+                </tr>
+
+            </table>
+            <mat-paginator [pageSize]="20" [pageSizeOptions]="[20, 30, 40]" showFirstLastButtons></mat-paginator>
+        </div>
+    </div>
+</div>
