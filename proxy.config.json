@@ -1,6 +1,6 @@
 {
   "/": {
-    "target": "http://www.siwes.org",
+    "target": "http://localhost:8080",
     "pathRewrite": {
       "^/": ""
     },

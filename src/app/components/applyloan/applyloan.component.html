@@ -6,7 +6,7 @@
         <div class="clearfix">
 
             <mat-horizontal-stepper labelPosition="bottom" #stepper>
-                <mat-step [stepControl]="clientInformationFormGroup">
+                <mat-step [stepControl]="clientInformationFormGroup" [optional]="false">
                     <form [formGroup]="clientInformationFormGroup" class="form-horizontal">
                         <ng-template matStepLabel>Client Information</ng-template>
                         <div class="row">
@@ -14,7 +14,7 @@
                                 <div class="form-group row">
                                     <label class="col-md-2 control-label">First Name</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" formControlName="firstName">
+                                        <input type="text" class="form-control" formControlName="firstName" >
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -96,8 +96,8 @@
                                         <input type="text" class="form-control" formControlName="nokRelationship">
                                     </div>
                                 </div>
-                                <button mat-button matStepperNext class="btn btn-primary float-right">Next</button>
-                               
+                                <button mat-button matStepperNext class="btn btn-primary float-right col-md-4">Save </button>
+                                <!-- (click)="saveClientInformation()" -->
                             </div>
 
 
@@ -108,8 +108,8 @@
 
                     </form>
                 </mat-step>
-                <mat-step [stepControl]="witnessFormGroup" optional>
-                    <form [formGroup]="witnessFormGroup">
+                <mat-step [stepControl]="loanApplicationFormGroup" optional>
+                    <form [formGroup]="loanApplicationFormGroup">
                         <ng-template matStepLabel>Loan Application Form</ng-template>
                         <div class="row">
                             <div class="col-lg-12">
@@ -196,10 +196,6 @@
                                 <div class="form-group">
                                     <label for="inputEmail4">Phone No</label>
                                     <input type="email" class="form-control" placeholder="Phone No" formControlName="phone"  maxlength="11">
-                                </div>
-                                <div class="form-group ">
-                                    <label for="inputEmail4">Date Created</label>
-                                    <input type="date" class="form-control" placeholder="Date Created" formControlName="dateCreated">
                                 </div>
 
                                 <button mat-button matStepperNext class="btn btn-primary float-right">Next</button>

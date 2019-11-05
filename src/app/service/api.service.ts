@@ -32,6 +32,11 @@ export class ApiService {
   }
 
 
+
+  saveClientInformation(value: any) {
+    return this.http.post(this.baseUrl + '/clientInformation', value);
+  }
+
   saveLoanInterestRate(value: any): any {
     return this.http.post(this.baseUrl + '/loanInterestRate', value);
   }
