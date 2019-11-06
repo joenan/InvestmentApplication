@@ -33,8 +33,12 @@ export class ApiService {
 
 
 
-  saveClientInformation(value: any) {
+  saveClientInformation(value: any): any {
     return this.http.post(this.baseUrl + '/clientInformation', value);
+  }
+
+  saveInvestmentInformation(value: any): any {
+    return this.http.post(this.baseUrl + '/investment', value);
   }
 
   saveLoanInterestRate(value: any): any {
@@ -57,18 +61,18 @@ export class ApiService {
     return this.http.get(this.baseUrl + '/loanType');
   }
   deleteLoanTypes(id: any) {
-    return this.http.delete(this.baseUrl + '/loanType/'+id);
+    return this.http.delete(this.baseUrl + '/loanType/' + id);
   }
 
   saveLoanStatus(value: any): any {
     return this.http.post(this.baseUrl + '/loanStatus', value);
   }
-  
+
   getAllLoanStatus() {
     return this.http.get(this.baseUrl + '/loanStatus');
   }
   deleteLoanStatus(id: any) {
-    return this.http.delete(this.baseUrl + '/loanStatus/'+id);
+    return this.http.delete(this.baseUrl + '/loanStatus/' + id);
   }
 
 }

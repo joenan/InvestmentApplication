@@ -1,171 +1,176 @@
 <div class="card">
-    <!-- <div class="panel-heading">
+  <!-- <div class="panel-heading">
                 <h4>Invoice</h4>
             </div> -->
-    <div class="card-body">
-        <div class="clearfix">
+  <div class="card-body">
+    <div class="clearfix">
 
-            <mat-horizontal-stepper labelPosition="bottom" #stepper>
-                <mat-step [stepControl]="firstFormGroup">
-                    <form [formGroup]="firstFormGroup" class="form-horizontal">
-                        <ng-template matStepLabel>Client Information</ng-template>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="form-group row">
-                                    <label class="col-md-2 control-label">First Name</label>
-                                    <div class="col-md-10">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-2 control-label" for="example-email">Middle Name</label>
-                                    <div class="col-md-10">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-2 control-label" for="example-email">Surname</label>
-                                    <div class="col-md-10">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-2 control-label">Residential Address</label>
-                                    <div class="col-md-10">
-                                        <textarea class="form-control" rows="2"></textarea>
-                                    </div>
-                                </div>
+      <mat-horizontal-stepper labelPosition="bottom" #stepper>
+        <mat-step [stepControl]="clientFormGroup">
+          <form [formGroup]="clientFormGroup" class="form-horizontal" name="clientFormGroup">
+            <ng-template matStepLabel>Client Information</ng-template>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group row">
+                  <label class="col-md-2 control-label">First Name</label>
+                  <div class="col-md-10">
+                    <input type="text" class="form-control" formControlName="firstName">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-2 control-label" for="example-email">Middle Name</label>
+                  <div class="col-md-10">
+                    <input type="text" class="form-control" formControlName="middleName">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-2 control-label" for="example-email">Surname</label>
+                  <div class="col-md-10">
+                    <input type="text" class="form-control" formControlName="surname">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-2 control-label">Residential Address</label>
+                  <div class="col-md-10">
+                    <textarea class="form-control" rows="2" formControlName="residentialAddress"></textarea>
+                  </div>
+                </div>
 
-                                <div class="form-group row">
-                                    <label class="col-md-2 control-label">Town</label>
-                                    <div class="col-md-10">
-                                        <input type="text" class="form-control" placeholder="Town">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-2 control-label">Phone</label>
-                                    <div class="col-md-10">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-2 control-label">Email</label>
-                                    <div class="col-md-10">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
+                <div class="form-group row">
+                  <label class="col-md-2 control-label">Town</label>
+                  <div class="col-md-10">
+                    <input type="text" class="form-control" placeholder="Town" formControlName="town">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-2 control-label">Phone</label>
+                  <div class="col-md-10">
+                    <input type="text" class="form-control" formControlName="phone">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-2 control-label">Email</label>
+                  <div class="col-md-10">
+                    <input type="email" class="form-control" formControlName="email">
+                  </div>
+                </div>
 
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group row">
-                                    <label class="col-md-2 control-label">Next of Kin Name</label>
-                                    <div class="col-md-10">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-2 control-label" for="example-email">Next of Kin
-                                        Address</label>
-                                    <div class="col-md-10">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group row">
+                  <label class="col-md-2 control-label">Next of Kin Name</label>
+                  <div class="col-md-10">
+                    <input type="text" class="form-control" formControlName="nokName">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-2 control-label" for="example-email">Next of Kin
+                    Address</label>
+                  <div class="col-md-10">
+                    <input type="text" class="form-control" formControlName="nokAddress">
+                  </div>
+                </div>
 
-                                <div class="form-group row">
-                                    <label class="col-md-2 control-label">Next of Kin Residential Address</label>
-                                    <div class="col-md-10">
-                                        <textarea class="form-control" rows="2"></textarea>
-                                    </div>
-                                </div>
+                <div class="form-group row">
+                  <label class="col-md-2 control-label">Next of Kin Residential Address</label>
+                  <div class="col-md-10">
+                    <textarea class="form-control" rows="2" formControlName="nokAddress"></textarea>
+                  </div>
+                </div>
 
-                                <div class="form-group row">
-                                    <label class="col-md-2 control-label">Next of kin Phone</label>
-                                    <div class="col-md-10">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-2 control-label">Next of Kin Email</label>
-                                    <div class="col-md-10">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-2 control-label">Next of Kin Relationship</label>
-                                    <div class="col-md-10">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <button mat-button matStepperNext class="btn btn-primary float-right">Next</button>
+                <div class="form-group row">
+                  <label class="col-md-2 control-label">Next of kin Phone</label>
+                  <div class="col-md-10">
+                    <input type="text" class="form-control" formControlName="nokPhone">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-2 control-label">Next of Kin Email</label>
+                  <div class="col-md-10">
+                    <input type="text" class="form-control" formControlName="nokEmail">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-2 control-label">Next of Kin Relationship</label>
+                  <div class="col-md-10">
+                    <input type="text" class="form-control" formControlName="nokRelationship">
+                  </div>
+                </div>
+                <button mat-button matStepperNext class="btn btn-primary float-right">Next</button>
 
-                            </div>
-
-
-
-                        </div>
+              </div>
 
 
 
-                    </form>
-                </mat-step>
-                <mat-step [stepControl]="secondFormGroup">
-                    <form [formGroup]="secondFormGroup">
-                        <ng-template matStepLabel>Investment Application Form</ng-template>
+            </div>
 
-                        <form>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Amount in Words</label>
-                                    <input type="email" class="form-control" id="inputEmail4"
-                                        placeholder="Amount in words">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Amount</label>
-                                    <input type="number" class="form-control" id="inputEmail4" placeholder="Amount">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Date Invested</label>
-                                    <input type="date" class="form-control" id="inputEmail4" placeholder="Date">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Period in Months</label>
-                                    <input type="number" class="form-control" id="inputEmail4"
-                                        placeholder="Period in Months">
-                                </div>
-                            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="investmentFormGroup">
+          <form [formGroup]="investmentFormGroup" class="form-horizontal" name="investmentFormGroup">
+            <ng-template matStepLabel>Investment Application Form</ng-template>
 
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="number" class="form-control" id="appid" placeholder="id" name="investmentId"
+                  formControlName="investmentId" hidden>
 
-                            <div class="form-row">
+                <input type="text" class="form-control" id="appid" placeholder="id" formControlName="clientId" hidden>
 
+                <label for="inputEmail4">Amount in Words</label>
 
-                                <div class="form-group col-md-6"> </div>
-
-                                <div class="form-group col-md-6"> <button class="btn btn-primary float-right">Save</button> </div>
-
-                            </div>
-
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Amount in words"
+                  formControlName="amountInWords">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Amount</label>
+                <input type="number" class="form-control" id="inputEmail4" placeholder="Amount"
+                  formControlName="amount">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Date Invested</label>
+                <input type="date" class="form-control" id="inputEmail4" placeholder="Date"
+                  formControlName="dateInvested">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Period in Months</label>
+                <input type="number" class="form-control" id="inputEmail4" placeholder="Period in Months"
+                  formControlName="periodCycle">
+              </div>
+            </div>
 
 
-                        </form>
+            <div class="form-row">
 
-                    </form>
-                </mat-step>
 
-                <mat-step>
-                    <ng-template matStepLabel>Done</ng-template>
-                    You are now done.
-                    <div>
+              <div class="form-group col-md-6"> </div>
 
-                        <button mat-button class="btn btn-primary float-right mr-3">Save</button>
-                        <button mat-button class="btn btn-primary float-right mr-3"
-                            (click)="stepper.reset()">Reset</button>
+              <div class="form-group col-md-6"> <button class="btn btn-primary float-right"
+                  (click)="saveInvestmentInformation()">Save</button> </div>
 
-                    </div>
-                </mat-step>
-            </mat-horizontal-stepper>
-        </div>
+            </div>
 
+
+
+
+
+          </form>
+        </mat-step>
+
+        <mat-step>
+          <ng-template matStepLabel>Done</ng-template>
+          You are now done.
+          <div>
+
+            <button mat-button class="btn btn-primary float-right mr-3">Save</button>
+            <button mat-button class="btn btn-primary float-right mr-3" (click)="stepper.reset()">Reset</button>
+
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper>
     </div>
+
+  </div>
 </div>
