@@ -22,14 +22,7 @@ export class ApplyloanComponent implements OnInit {
     this.createFormControls();
   }
 
-  saveClientInformation() {
-    this.service.saveClientInformation(this.clientInformationFormGroup.value).subscribe(res => {
-
-    },
-      error => {
-        console.log(error.error.message)
-      });
-    }
+  
 
   createFormControls() {
     this.clientInformationFormGroup = this._formBuilder.group({
@@ -49,7 +42,7 @@ export class ApplyloanComponent implements OnInit {
     });
 
     this.witnessFormGroup = this._formBuilder.group({
-      witnessId: ['', [Validators.required]],
+      witnessId: [''],
       firstName: ['', [Validators.required]],
       middleName: ['', [Validators.required]],
       surname: ['', [Validators.required]],
@@ -64,7 +57,7 @@ export class ApplyloanComponent implements OnInit {
 
 
     this.guarantorFormGroup = this._formBuilder.group({
-      guarantorId: ['', [Validators.required]],
+      guarantorId: [''],
       firstName: ['', [Validators.required]],
       middleName: ['', [Validators.required]],
       surname: ['', [Validators.required]],
@@ -82,9 +75,9 @@ export class ApplyloanComponent implements OnInit {
     this.loanApplicationFormGroup = this._formBuilder.group({
       applicationId: ['', [Validators.required]],
       amountInWords: ['', [Validators.required]],
-      amout: ['', [Validators.required]],
+      amount: ['', [Validators.required]],
       dateRequested: ['', [Validators.required]],
-      period: ['', [Validators.required]],
+      periodCycle: ['', [Validators.required]],
       dueDate: ['', [Validators.required]],
       statusId: ['', [Validators.required]],
       loanTypeId: ['', [Validators.required]],
@@ -95,5 +88,18 @@ export class ApplyloanComponent implements OnInit {
 
     });
   }
+
+  saveApplicationInformation() {
+    this.loanApplicationFormGroup.value.clientId = this.clientInformationFormGroup.value;
+    this.loanApplicationFormGroup.value.guarantorId = this.guarantorFormGroup.value;
+    this.loanApplicationFormGroup.value.witnessId = this.witnessFormGroup.value;
+
+    this.service.saveApplicationInformation(this.loanApplicationFormGroup.value).subscribe(res => {
+        console.log(res)
+    },
+      error => {
+        console.log(error.error.message)
+      });
+    }
 
 }

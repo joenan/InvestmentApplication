@@ -6,8 +6,8 @@
         <div class="clearfix">
 
             <mat-horizontal-stepper labelPosition="bottom" #stepper>
-                <mat-step [stepControl]="firstFormGroup">
-                    <form [formGroup]="firstFormGroup" class="form-horizontal">
+                <mat-step [stepControl]="investorFormGroup">
+                    <form [formGroup]="investorFormGroup" class="form-horizontal">
                         <ng-template matStepLabel>Client Information</ng-template>
                         <div class="row">
                             <div class="col-lg-6">
@@ -108,8 +108,8 @@
 
                     </form>
                 </mat-step>
-                <mat-step [stepControl]="secondFormGroup">
-                    <form [formGroup]="secondFormGroup">
+                <mat-step [stepControl]="applicationFormGroup">
+                    <form [formGroup]="applicationFormGroup">
                         <ng-template matStepLabel>Investment Application Form</ng-template>
 
                         <form>

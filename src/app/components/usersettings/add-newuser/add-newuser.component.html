@@ -6,7 +6,7 @@
         <div class="clearfix">
 
             <mat-horizontal-stepper labelPosition="bottom" #stepper>
-                <mat-step [stepControl]="clientInformationFormGroup">
+                <mat-step [stepControl]="clientInformationFormGroup" [optional]="false">
                     <form [formGroup]="clientInformationFormGroup" class="form-horizontal">
                         <ng-template matStepLabel>Client Information</ng-template>
                         <div class="row">
@@ -14,7 +14,7 @@
                                 <div class="form-group row">
                                     <label class="col-md-2 control-label">First Name</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" formControlName="firstName">
+                                        <input type="text" class="form-control" formControlName="firstName" >
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -96,8 +96,8 @@
                                         <input type="text" class="form-control" formControlName="nokRelationship">
                                     </div>
                                 </div>
-                                <button mat-button matStepperNext class="btn btn-primary float-right">Next</button>
-                               
+                                <button mat-button class="btn btn-primary float-right" (click)="saveClientInformation()">Save </button>
+                                <!-- (click)="saveClientInformation()" -->
                             </div>
 
 
@@ -107,175 +107,8 @@
 
 
                     </form>
-                </mat-step>
-                <mat-step [stepControl]="witnessFormGroup" optional>
-                    <form [formGroup]="witnessFormGroup">
-                        <ng-template matStepLabel>Loan Application Form</ng-template>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="form-group row">
-                                    <label class="col-sm-2 control-label">Loan Type</label>
-                                    <div class="col-sm-10">
-                                        <select class="form-control" formControlName="loanTypeId">
-                                            <option>Choose Loan Type</option>
-                                            <option>Advanced</option>
-
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-
-                                    <label class="col-md-2 control-label" for="example-email">Amount in Words</label>
-                                    <div class="col-md-10">
-                                        <input type="text" class="form-control" formControlName="amountInWords">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-2 control-label" for="example-email">Amount</label>
-                                    <div class="col-md-10">
-                                        <input type="text" class="form-control" formControlName="amout">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-2 control-label">Date Requested</label>
-                                    <div class="col-md-10">
-                                        <input type="date" class="form-control" formControlName="dateRequested">
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label class="col-md-2 control-label">Period in Months</label>
-                                    <div class="col-md-10">
-                                        <input type="number" class="form-control" formControlName="period">
-                                    </div>
-                                </div>
-                                <button mat-button matStepperNext class="btn btn-primary float-right">Next</button>
-                                <button mat-button matStepperPrevious
-                                    class="btn btn-primary float-right mr-3">Previous</button>
-
-                            </div>
-
-                        </div>
-
-                    </form>
-                </mat-step>
-                <mat-step [stepControl]="witnessFormGroup">
-                    <form [formGroup]="witnessFormGroup">
-                        <ng-template matStepLabel>Witness Form</ng-template>
-                        <div class="row">
-                            <div class="col-md-6">
-
-                                <div class="form-group">
-                                    <label for="inputEmail4">First Name</label>
-                                    <input type="email" class="form-control" placeholder="First Name" formControlName="firstName">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail4">Middle Name</label>
-                                    <input type="email" class="form-control" placeholder="Middle Name" formControlName="firstName">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail4">Surname</label>
-                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Surname Name" formControlName="surname">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputAddress">Residential Address</label>
-                                    <input type="text" class="form-control" placeholder="Residential Address" formControlName="residentialAddress">
-                                </div>
-
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="inputAddress">Contact Address</label>
-                                    <input type="text" class="form-control" placeholder="Contact Address" formControlName="contactAddress">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail4">Email</label>
-                                    <input type="email" class="form-control" placeholder="Email" formControlName="email">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail4">Phone No</label>
-                                    <input type="email" class="form-control" placeholder="Phone No" formControlName="phone"  maxlength="11">
-                                </div>
-                                <div class="form-group ">
-                                    <label for="inputEmail4">Date Created</label>
-                                    <input type="date" class="form-control" placeholder="Date Created" formControlName="dateCreated">
-                                </div>
-
-                                <button mat-button matStepperNext class="btn btn-primary float-right">Next</button>
-                                <button mat-button matStepperPrevious
-                                    class="btn btn-primary float-right mr-3">Previous</button>
-                            </div>
-                        </div>
-
-
-                    </form>
-                </mat-step>
-                <mat-step [stepControl]="guarantorFormGroup">
-                    <form [formGroup]="guarantorFormGroup">
-                        <ng-template matStepLabel>Guarantor Form</ng-template>
-                        <div class="row">
-                            <div class="col-md-6">
-
-                                <div class="form-group">
-                                    <label for="inputEmail4">First Name</label>
-                                    <input type="email" class="form-control" id="inputEmail4" placeholder="First Name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail4">Middle Name</label>
-                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Middle Name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail4">Surname</label>
-                                    <input type="email" class="form-control" id="inputEmail4"
-                                        placeholder="Surname Name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputAddress">Residential Address</label>
-                                    <input type="text" class="form-control" id="inputAddress"
-                                        placeholder="Residential Address">
-                                </div>
-
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="inputAddress">Contact Address</label>
-                                    <input type="text" class="form-control" id="inputAddress"
-                                        placeholder="Contact Address">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail4">Email</label>
-                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail4">Phone No</label>
-                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Phone No"
-                                        maxlength="11">
-                                </div>
-                                <div class="form-group ">
-                                    <label for="inputEmail4">Date Created</label>
-                                    <input type="date" class="form-control" id="inputEmail4" placeholder="Date Created">
-                                </div>
-
-                                <button mat-button matStepperNext class="btn btn-primary float-right">Next</button>
-                                <button mat-button matStepperPrevious
-                                    class="btn btn-primary float-right mr-3">Previous</button>
-                            </div>
-                        </div>
-                    </form>
-                </mat-step>
-                <mat-step>
-                    <ng-template matStepLabel>Done</ng-template>
-                    You are now done.
-                    <div>
-
-                            <button mat-button class="btn btn-primary float-right mr-3">Save</button>
-                            <button mat-button class="btn btn-primary float-right mr-3" (click)="stepper.reset()">Reset</button>
-                          
-
-                       
-                    </div>
+                
+                
                 </mat-step>
             </mat-horizontal-stepper>
         </div>

@@ -8,78 +8,67 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 })
 export class InvestComponent implements OnInit {
   isLinear = false;
-  clientInformationFormGroup: FormGroup;
-  loanApplicationFormGroup: FormGroup;
-  witnessFormGroup: FormGroup;
-  guarantorFormGroup:FormGroup;
+  investorFormGroup: FormGroup;
+  applicationFormGroup: FormGroup;
+ 
 
 
 
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit() {
-    this.clientInformationFormGroup = this._formBuilder.group({
-      clientId: ['', [Validators.required]],
-      firstName: ['', [Validators.required]],
-      middleName: ['', [Validators.required]],
-      surname: ['', [Validators.required]],
-      residentialAddress: ['', [Validators.required]],
-      town: ['', [Validators.required]],
-      phone: ['', [Validators.required]],
-      email: ['', [Validators.required]],
-      nokName: ['', [Validators.required]],
-      nokAddress: ['', [Validators.required]],
-      nokPhone: ['', [Validators.required]],
-      nokEmail: ['', [Validators.required]],
-      nokRelationship: ['', [Validators.required]],
-    });
-
-    this.witnessFormGroup = this._formBuilder.group({
-      witnessId: ['', [Validators.required]],
-      firstName: ['', [Validators.required]],
-      middleName: ['', [Validators.required]],
-      surname: ['', [Validators.required]],
-      residentialAddress: ['', [Validators.required]],
-      contactAddress: ['', [Validators.required]],
-      email: ['', [Validators.required]],
-      phone: ['', [Validators.required]],
-      signature: ['', [Validators.required]],
-      clientId: this.clientInformationFormGroup.value
-    });
-
-
-
-    this.guarantorFormGroup = this._formBuilder.group({
-      guarantorId: ['', [Validators.required]],
-      firstName: ['', [Validators.required]],
-      middleName: ['', [Validators.required]],
-      surname: ['', [Validators.required]],
-      phone: ['', [Validators.required]],
-      email: ['', [Validators.required]],
-      residentialAddress: ['', [Validators.required]],
-      contactAddress: ['', [Validators.required]],
-      signature: ['', [Validators.required]],
-      dateCreated: ['', [Validators.required]],
-      date: ['', [Validators.required]],
-      clientId: this.clientInformationFormGroup.value,
-      
-    });
-
-    this.loanApplicationFormGroup = this._formBuilder.group({
-      applicationId: ['', [Validators.required]],
+    this.investorFormGroup = this._formBuilder.group({
+      amount: ['', [Validators.required]],
       amountInWords: ['', [Validators.required]],
-      amout: ['', [Validators.required]],
-      dateRequested: ['', [Validators.required]],
-      period: ['', [Validators.required]],
+      clientId: ['', [Validators.required]],
+      dateCreated: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+      firstName: ['', [Validators.required]],
+      investmentList: ['', [Validators.required]],
+      middleName: ['', [Validators.required]],
+      nokAddress: ['', [Validators.required]],
+      nokEmail: ['', [Validators.required]],
+      nokName: ['', [Validators.required]],
+      nokPhone: ['', [Validators.required]],
+      nokRelationship: ['', [Validators.required]],
+      phone: ['', [Validators.required]],
+      residentialAddress: ['', [Validators.required]],
+      signature: ['', [Validators.required]],
+      surname: ['', [Validators.required]],
+      town: ['', [Validators.required]],
+      dateInvested: ['', [Validators.required]],
       dueDate: ['', [Validators.required]],
-      statusId: ['', [Validators.required]],
-      loanTypeId: ['', [Validators.required]],
       interestId: ['', [Validators.required]],
-      guarantorId: this.guarantorFormGroup.value,
-      witnessId: this.witnessFormGroup.value,
-      clientId: this.clientInformationFormGroup.value,
-      
+      investmentId: ['', [Validators.required]],
+      periodCycle:  ['', [Validators.required]]
     });
+
+    this.applicationFormGroup = this._formBuilder.group({
+      clientId: ['', [Validators.required]],
+      dateCreated: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+      firstName: ['', [Validators.required]],
+      investmentList: ['', [Validators.required]],
+      amount: ['', [Validators.required]],
+      amountInWords: ['', [Validators.required]],
+      dateInvested: ['', [Validators.required]],
+      dueDate: ['', [Validators.required]],
+      interestId: ['', [Validators.required]],
+      investmentId: ['', [Validators.required]],
+      periodCycle: ['', [Validators.required]],
+      middleName: ['', [Validators.required]],
+      nokAddress: ['', [Validators.required]],
+      nokEmail: ['', [Validators.required]],
+      nokName: ['', [Validators.required]],
+      nokPhone: ['', [Validators.required]],
+      nokRelationship: ['', [Validators.required]],
+      phone: ['', [Validators.required]],
+      residentialAddress: ['', [Validators.required]],
+      signature: ['', [Validators.required]],
+      surname: ['', [Validators.required]],
+      town: ['', [Validators.required]]
+    });
+    
 
 
   }
